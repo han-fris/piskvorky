@@ -1,20 +1,23 @@
 body {
   background-image: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   font-family: sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .uvod {
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  flex-wrap: wrap;
+  margin: 20px 10px;
 }
 
 .uvod__fotka {
   width: 100%;
-  border-radius: 10px 10px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 
 .uvod__text {
@@ -26,30 +29,35 @@ body {
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 35px;
 }
 
 .uvod__popis {
   padding-inline: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .uvod__buttons {
   display: flex;
   flex-direction: column;
+  background-color: #283e50;
 }
 
 .uvod__buttons a {
   text-decoration: none;
   color: white;
+  display: block;
 }
 
 .uvod__pravidla,
 .uvod__hrat {
-  padding-block: 8px;
+  padding-block: 10px;
+  border: 0;
 }
 
 .uvod__pravidla {
   background-color: #1fcca4;
+  margin-bottom: 1px;
 }
 
 .uvod__pravidla:hover {
@@ -62,4 +70,12 @@ body {
 
 .uvod_hrat:hover {
   background-color: #0090e9;
+}
+
+@media (min-width: 400px) {
+  .uvod {
+    width: 280px;
+    padding-inline: 20px;
+    padding-block: 40px;
+  }
 }
