@@ -1,0 +1,31 @@
+.uvod {
+  width: 400px;
+  text-align: center;
+}
+
+.uvod__fotka {
+  width: 100%;
+}
+
+.uvod__text {}
+
+.uvod__nadpis {}
+
+.uvod__popis {
+  padding-inline: 20px;
+  padding-bottom: 10px;
+}
+
+.uvod__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.uvod__buttons a {
+  text-decoration: none;
+}
+
+.uvod__pravidla,
+.uvod__hrat {
+  padding-block: 8px;
+}
