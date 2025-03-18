@@ -54,6 +54,7 @@ body {
 }
 
 .uvod__buttons a {
+  padding-block: 10px;
   text-decoration: none;
   color: white;
   display: block;
@@ -61,7 +62,6 @@ body {
 
 .uvod__pravidla,
 .uvod__hrat {
-  padding-block: 10px;
   border: 0;
 }
 
@@ -89,4 +89,4 @@ body {
   }
 }
 
-/*ještě potřebuji doladit padding a aby bylo dobré zobrazení na celou stránku včetně pozadí a aby tlačítka byly aktivní po celé výšce */
+/*ještě potřebuji doladit padding a aby bylo dobré zobrazení na celou stránku včetně pozadí*/
