@@ -12,7 +12,16 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: 20px 10px;
+  margin: 0px 0px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%)
+    /*
+  justify-content: center;
+  align-items: center; 
+  
+   toto bohuzel na vycentrovani nepomohlo tak jsem pouzila pozicování relative
+  */
 }
 
 .uvod__fotka {
@@ -41,6 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #283e50;
+  width: 100%;
 }
 
 .uvod__buttons a {
@@ -72,10 +82,11 @@ body {
   background-color: #0090e9;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 300px) {
   .uvod {
     width: 280px;
-    padding-inline: 20px;
-    padding-block: 40px;
+    padding: 10vh 20px 30vh 20px;
   }
 }
+
+/*ještě potřebuji doladit padding a aby bylo dobré zobrazení na celou stránku včetně pozadí a aby tlačítka byly aktivní po celé výšce */
