@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin: auto;
   padding: 10vh 10px 4vh 10px;
 }
 
@@ -47,7 +48,7 @@ body {
 }
 
 .uvod__buttons a {
-  padding-block: 12px;
+  padding-block: 14px;
   text-decoration: none;
   color: white;
   display: block;
@@ -80,8 +81,5 @@ body {
 @media (min-width: 420px) {
   .uvod {
     width: 340px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
   }
 }
