@@ -5,7 +5,7 @@ body {
   height: 100vh;
   margin: 0;
   font-family: sans-serif;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .uvod {
@@ -13,17 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%);
-  padding: 8vh 10px 0 10px;
-  /*
-  justify-content: center;
-  align-items: center; 
-  
-   toto bohuzel na vycentrovani nepomohlo tak jsem pouzila pozicování relative
-  */
+  padding: 10vh 10px 4vh 10px;
 }
 
 .uvod__fotka {
@@ -61,6 +51,8 @@ body {
   text-decoration: none;
   color: white;
   display: block;
+  font-family: sans-serif;
+  font-size: 14px;
 }
 
 .uvod__pravidla,
@@ -87,6 +79,9 @@ body {
 
 @media (min-width: 420px) {
   .uvod {
-    width: 300px;
+    width: 340px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
