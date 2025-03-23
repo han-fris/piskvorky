@@ -12,8 +12,6 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin: auto;
   padding: 10vh 10px 4vh 10px;
 }
 
@@ -81,5 +79,8 @@ body {
 @media (min-width: 420px) {
   .uvod {
     width: 340px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
