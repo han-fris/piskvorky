@@ -18,7 +18,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: 10vw 10px;
+  margin: 10vh 10px 5vh 10px;
 }
 
 /* stylování úvodní fotky */
