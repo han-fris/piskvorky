@@ -22,6 +22,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: 80vmin;
 }
 
@@ -30,11 +31,12 @@ body {
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 5rem;
+  font-size: 3rem;
   padding: 0;
-  margin-block: 18px;
+  margin-block: 5vw;
   display: flex;
   justify-content: center;
+  max-width: 100%;
 }
 
 .hra__menu {
@@ -53,8 +55,12 @@ body {
   align-items: center;
 }
 
-.hra__hraje img {
-  padding: 5px
+.hra__kruh {
+  width: 25px;
+  height: 25px;
+  border: solid 3px;
+  border-radius: 50%;
+  margin: 5px;
 }
 
 .hra__tlacitka {
@@ -71,14 +77,14 @@ body {
 .hra__restart {
   border-radius: 5px;
   margin: 3px;
-
 }
 
 .hra__home {
   background-color: #1fcca4;
 }
 
-.hra__home:hover {
+.hra__home:hover,
+.hra__home:focus {
   background-color: #1cbb96;
 }
 
@@ -86,7 +92,8 @@ body {
   background-color: #0197f6;
 }
 
-.hra__restart:hover {
+.hra__restart:hover,
+.hra__restart:focus {
   background-color: #0090e9;
 }
 
@@ -95,12 +102,10 @@ body {
 .hra__hracipole {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding-block: 5vw;
 }
 
 .hra__hracipole div {
-  max-width: 80vmin;
-  max-height: 80vmin;
   display: flex;
 }
 
@@ -108,10 +113,12 @@ body {
   background-color: rgba(255, 255, 255, 0.4);
   border: solid 2px #283e50;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-height: 100%;
 }
 
-.hra__hracipole button:hover {
+.hra__hracipole button:hover,
+.hra__hracipole button:focus {
   background-color: rgba(255, 255, 255, 0.8);
 }

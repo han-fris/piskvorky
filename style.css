@@ -75,7 +75,8 @@ body {
   margin-bottom: 1px;
 }
 
-.uvod__pravidla:hover {
+.uvod__pravidla:hover,
+.uvod__pravidla:focus {
   background-color: #1cbb96;
 }
 
@@ -83,7 +84,8 @@ body {
   background-color: #0197f6;
 }
 
-.uvod__hrat:hover {
+.uvod__hrat:hover,
+.uvod__hrat:focus {
   background-color: #0090e9;
 }
 
