@@ -24,6 +24,7 @@ body {
   flex-direction: column;
   width: 100%;
   max-width: 80vmin;
+  max-height: 100%;
 }
 
 /*Stylování hlavičky a odkazů*/
@@ -33,7 +34,7 @@ body {
   font-style: normal;
   font-size: 3rem;
   padding: 0;
-  margin-block: 5vw;
+  margin-block: 2vw;
   display: flex;
   justify-content: center;
   max-width: 100%;
@@ -102,7 +103,7 @@ body {
 .hra__hracipole {
   display: flex;
   flex-direction: column;
-  padding-block: 5vw;
+  padding-block: 1vw;
 }
 
 .hra__hracipole div {
