@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(#615dad, #ffc8da) fixed;
+  min-height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+
+}
+
+/*STYLOVÁNÍ HRA*/
+
+.hra {
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 80vmin;
+}
+
+/*Stylování hlavičky a odkazů*/
+.hra__nadpis {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+  padding: 0;
+  margin-block: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.hra__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hra__menu h2 {
+  margin: 0;
+}
+
+.hra__hraje {
+  display: flex;
+  align-items: center;
+}
+
+.hra__hraje img {
+  padding: 5px
+}
+
+.hra__tlacitka {
+  display: flex;
+}
+
+.hra__tlacitka a {
+  padding: 10px;
+  text-decoration: none;
+  display: flex;
+}
+
+.hra__home,
+.hra__restart {
+  border-radius: 5px;
+  margin: 3px;
+
+}
+
+.hra__home {
+  background-color: #1fcca4;
+}
+
+.hra__home:hover {
+  background-color: #1cbb96;
+}
+
+.hra__restart {
+  background-color: #0197f6;
+}
+
+.hra__restart:hover {
+  background-color: #0090e9;
+}
+
+/*stylování hracích polí*/
+
+.hra__hracipole {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.hra__hracipole div {
+  max-width: 80vmin;
+  max-height: 80vmin;
+  display: flex;
+}
+
+.hra__hracipole button {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: solid 2px #283e50;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.hra__hracipole button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}

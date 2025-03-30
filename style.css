@@ -10,6 +10,7 @@ body {
   font-size: 0.9rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -18,7 +19,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: 10vh 10px 5vh 10px;
+  margin: 10px;
 }
 
 /* stylování úvodní fotky */
@@ -87,13 +88,8 @@ body {
 }
 
 /* stylování pro pc */
-@media (min-width: 420px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
+@media (min-width: 420px) {
   .uvod {
     width: 340px;
     margin: 0;
