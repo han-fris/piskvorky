@@ -18,6 +18,7 @@ body {
 /*STYLOVÁNÍ HRA*/
 
 .hra {
+  box-sizing: content-box;
   color: white;
   text-align: center;
   display: flex;
@@ -25,19 +26,25 @@ body {
   width: 100%;
   max-width: 80vmin;
   max-height: 100%;
+  margin: 0;
 }
 
 /*Stylování hlavičky a odkazů*/
 .hra__nadpis {
+  box-sizing: border-box;
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 3rem;
-  padding: 0;
-  margin-block: 2vw;
   display: flex;
   justify-content: center;
   max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.hra__nadpis h1 {
+  margin: 0;
 }
 
 .hra__menu {
@@ -112,7 +119,7 @@ body {
 
 .hra__hracipole button {
   background-color: rgba(255, 255, 255, 0.4);
-  border: solid 2px #283e50;
+  border: solid 1px #283e50;
   cursor: pointer;
   aspect-ratio: 1 / 1;
   width: 100%;
@@ -120,6 +127,7 @@ body {
 }
 
 .hra__hracipole button:hover,
-.hra__hracipole button:focus {
+.hra__hracipole button:focus,
+.hra__hracipole button:active {
   background-color: rgba(255, 255, 255, 0.8);
 }
