@@ -1,66 +1,68 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
-body {
+.hra__container {
   background: linear-gradient(#615dad, #ffc8da) fixed;
-  min-height: 100vh;
-  margin: 0;
   font-family: sans-serif;
   font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100dvh;
   max-width: 100%;
+
 
 }
 
 /*STYLOVÁNÍ HRA*/
 
-.hra {
+.hra__content {
   box-sizing: content-box;
-  color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
+  color: white;
   width: 100%;
   max-width: 80vmin;
-  max-height: 100%;
   margin: 0;
+  padding: 20px;
 }
 
 /*Stylování hlavičky a odkazů*/
-.hra__nadpis {
+.hra__header {
   box-sizing: border-box;
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 3rem;
+  font-size: 4rem;
   display: flex;
   justify-content: center;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
 }
 
-.hra__nadpis h1 {
+.hra__header h1 {
   margin: 0;
 }
 
 .hra__menu {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding-block: 10px;
 }
 
 .hra__menu h2 {
   margin: 0;
+  display: flex;
 }
 
 .hra__hraje {
   display: flex;
   align-items: center;
+  margin-block: 10px;
 }
 
 .hra__kruh {
@@ -71,6 +73,7 @@ body {
   margin: 5px;
 }
 
+/* tlačítka vpravo nahoře */
 .hra__tlacitka {
   display: flex;
 }
@@ -106,11 +109,10 @@ body {
 }
 
 /*stylování hracích polí*/
-
 .hra__hracipole {
   display: flex;
   flex-direction: column;
-  padding-block: 1vw;
+  padding-block: 0;
 }
 
 .hra__hracipole div {
