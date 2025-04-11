@@ -1,8 +1,9 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
-body {
+.uvod__container {
   background: linear-gradient(#615dad, #ffc8da) fixed;
   min-height: 100vh;
   margin: 0;
@@ -14,7 +15,7 @@ body {
   width: 100%;
 }
 
-.uvod {
+.uvod__content {
   box-sizing: content-box;
   text-align: center;
   display: flex;
@@ -92,8 +93,140 @@ body {
 /* stylování pro pc */
 
 @media (min-width: 420px) {
-  .uvod {
+  .uvod__content {
     width: 340px;
     margin: 0;
   }
+}
+
+/*hra*/
+
+.hra__container {
+  background: linear-gradient(#615dad, #ffc8da) fixed;
+  font-family: sans-serif;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  max-width: 100%;
+}
+
+
+/*STYLOVÁNÍ HRA*/
+
+.hra__content {
+  box-sizing: content-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  max-width: 80vmin;
+  margin: 0;
+  padding: 20px;
+}
+
+/*Stylování hlavičky a odkazů*/
+.hra__header {
+  box-sizing: border-box;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hra__header h1 {
+  margin: 0;
+}
+
+.hra__menu {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-block: 10px;
+}
+
+.hra__menu h2 {
+  margin: 0;
+  display: flex;
+}
+
+.hra__hraje {
+  display: flex;
+  align-items: center;
+  margin-block: 10px;
+}
+
+.hra__kruh {
+  width: 25px;
+  height: 25px;
+  border: solid 3px;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+/* tlačítka vpravo nahoře */
+.hra__tlacitka {
+  display: flex;
+}
+
+.hra__tlacitka a {
+  padding: 10px;
+  text-decoration: none;
+  display: flex;
+}
+
+.hra__home,
+.hra__restart {
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.hra__home {
+  background-color: #1fcca4;
+}
+
+.hra__home:hover,
+.hra__home:focus {
+  background-color: #1cbb96;
+}
+
+.hra__restart {
+  background-color: #0197f6;
+}
+
+.hra__restart:hover,
+.hra__restart:focus {
+  background-color: #0090e9;
+}
+
+/*stylování hracích polí*/
+.hra__hracipole {
+  display: flex;
+  flex-direction: column;
+  padding-block: 0;
+}
+
+.hra__hracipole div {
+  display: flex;
+}
+
+.hra__hracipole button {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: solid 1px #283e50;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-height: 100%;
+}
+
+.hra__hracipole button:hover,
+.hra__hracipole button:focus,
+.hra__hracipole button:active {
+  background-color: rgba(255, 255, 255, 0.8);
 }
