@@ -226,7 +226,14 @@
 }
 
 .hra__hracipole button:hover,
-.hra__hracipole button:focus,
-.hra__hracipole button:active {
+.hra__hracipole button:focus {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.board__field--circle img {
+  width: 100%;
+}
+
+.board__field--cross img {
+  width: 100%;
 }
