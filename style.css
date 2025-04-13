@@ -237,3 +237,17 @@
 .board__field--cross img {
   width: 100%;
 }
+
+.hra__player {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hra__player img {
+  display: flex;
+  margin: auto;
+  padding: 0;
+}
