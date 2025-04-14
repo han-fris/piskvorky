@@ -99,7 +99,7 @@
   }
 }
 
-/*hra*/
+/* TADY ZAČÍNÁ STYLOVÁNÍ HRY */
 
 .hra__container {
   background: linear-gradient(#615dad, #ffc8da) fixed;
@@ -113,7 +113,7 @@
 }
 
 
-/*STYLOVÁNÍ HRA*/
+/* OBSAH HRY */
 
 .hra__content {
   box-sizing: content-box;
@@ -122,12 +122,12 @@
   flex-direction: column;
   color: white;
   width: 100%;
-  max-width: 80vmin;
+  max-width: 90vmin;
   margin: 0;
   padding: 20px;
 }
 
-/*Stylování hlavičky a odkazů*/
+/* Stylování hlavičky a odkazů */
 .hra__header {
   box-sizing: border-box;
   font-family: "Lobster", sans-serif;
@@ -162,6 +162,7 @@
   margin-block: 10px;
 }
 
+/* TOTO UŽ NENÍ POTŘEBA, MÍSTO TOHO JE OBRÁZEK KTERÝ SE MĚNÍ PODLE TOHO KDO HRAJE
 .hra__kruh {
   width: 25px;
   height: 25px;
@@ -169,6 +170,7 @@
   border-radius: 50%;
   margin: 5px;
 }
+*/
 
 /* tlačítka vpravo nahoře */
 .hra__tlacitka {
@@ -205,7 +207,7 @@
   background-color: #0090e9;
 }
 
-/*stylování hracích polí*/
+/* stylování hracích polí */
 .hra__hracipole {
   display: flex;
   flex-direction: column;
@@ -226,25 +228,26 @@
   padding: 2px;
 }
 
+/* upraví padding na políčkách, aby byl cross nebo circle v mobilu větší
+upraví velikost hry pro zobrazení na počítači, aby na mobilu byla hra větší */
+
 @media (min-width: 420px) {
   .hra__hracipole button {
     padding: 5px
   }
+
+  .hra__content {
+    max-width: 80vmin;
+  }
 }
 
+/*stylování cross a circle v hracích polích*/
 .hra__hracipole button:hover,
 .hra__hracipole button:focus {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.board__field--circle img {
-  width: 100%;
-}
-
-.board__field--cross img {
-  width: 100%;
-}
-
+/*stylování kdo hraje*/
 .hra__player {
   width: 30px;
   height: 30px;
@@ -257,4 +260,23 @@
   display: flex;
   margin: auto;
   padding: 0;
+}
+
+/* STYLOVÁNÍ TRANSFORMACE POMOCÍ STARTING-STYLE A TŘÍD, KTERÉ JSEM VLOŽILA V JS */
+.hra__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.hra__showing {
+  width: 100%;
+  transition: width 0.15s;
+}
+
+@starting-style {
+  .hra__showing {
+    width: 20%;
+  }
 }

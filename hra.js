@@ -7,8 +7,9 @@ buttonElements.forEach((button) => {
     event.target.disabled = true;
     if (currentPlayer === 'circle') {
       button.innerHTML = ` 
-        <div class="board__field--circle">
+        <div class="board__field--circle hra__image-container ">
         <img
+          class="hra__image hra__showing"
           src="podklady/circle-black.svg"
           alt="černý kruh"
         />
@@ -18,8 +19,9 @@ buttonElements.forEach((button) => {
       playerElement.innerHTML = `<img src="podklady/cross.svg" alt="bílý kříž" />`;
     } else {
       button.innerHTML = ` 
-        <div class="board__field--cross">
+        <div class="board__field--cross hra__image-container">
         <img
+          class="hra__image hra__showing"
           src="podklady/cross-black.svg"
           alt="černý kříž"
         />
@@ -31,13 +33,12 @@ buttonElements.forEach((button) => {
   });
 });
 
+//ZAMEZENÍ RESTARTU HRY
 const restartElement = document.querySelector('.hra__restart');
 restartElement.addEventListener('click', (event) => {
   if (window.confirm('Jste si jistí, že chcete hru restartovat?')) {
-    window.open('hra.html');
+    window.open('hra.html', '_self');
   } else {
     event.preventDefault();
   }
 });
-/*
-Pomocí animací přidej symbolům efekt postupného zvětšení. V náhledu je animace zpomalená z času 0,15 s na 0.45 s, aby bylo lépe vidět, jak má vypadat. V tvém kódu po otestování použij čas kratší, aby hra působila svižně. */
