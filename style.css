@@ -225,7 +225,7 @@
   aspect-ratio: 1 / 1;
   width: 100%;
   max-height: 100%;
-  padding: 2px;
+  padding: 3px;
 }
 
 /* upraví padding na políčkách, aby byl cross nebo circle v mobilu větší
@@ -233,7 +233,7 @@ upraví velikost hry pro zobrazení na počítači, aby na mobilu byla hra vět�
 
 @media (min-width: 420px) {
   .hra__hracipole button {
-    padding: 5px
+    padding: 6px
   }
 
   .hra__content {
@@ -277,6 +277,6 @@ upraví velikost hry pro zobrazení na počítači, aby na mobilu byla hra vět�
 
 @starting-style {
   .hra__showing {
-    width: 20%;
+    width: 0;
   }
 }
