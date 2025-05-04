@@ -4,6 +4,32 @@ let currentPlayer = 'circle';
 
 const buttonElements = document.querySelectorAll('button');
 
+//VYTVOŘIT POLE S ÚDAJI O AKTUÁLNÍM STAVU HRY
+function createArray() {
+  const array = [];
+  buttonElements.forEach((button) => {
+    if (button.classList.contains('x')) {
+      array.push('x');
+    } else if (button.classList.contains('o')) {
+      array.push('o');
+    } else {
+      array.push('_');
+    }
+  });
+
+  return array;
+}
+
+//ZJISTIT KDO VYHRÁL
+const whoWon = () => {
+  const vitez = findWinner(createArray());
+  if (vitez === 'o' || vitez === 'x') {
+    alert(`Vyhrál hráč se symbolem ${vitez}.`);
+    location.reload();
+  }
+  console.log(vitez);
+};
+
 buttonElements.forEach((button) => {
   button.addEventListener('click', (event) => {
     event.target.disabled = true;
@@ -36,6 +62,7 @@ buttonElements.forEach((button) => {
       const playerElement = document.querySelector('.hra__player');
       playerElement.innerHTML = `<img src="podklady/circle.svg" alt="bílý kruh"/>`;
     }
+    whoWon();
   });
 });
 
@@ -48,19 +75,3 @@ restartElement.addEventListener('click', (event) => {
     event.preventDefault();
   }
 });
-
-//VYTVOŘIT POLE S ÚDAJI O AKTUÁLNÍM STAVU HRY
-function createArray() {
-  const array = [];
-  buttonElements.forEach((button) => {
-    if (button.classList.contains('x')) {
-      array.push('x');
-    } else if (button.classList.contains('o')) {
-      array.push('o');
-    } else {
-      array.push('_');
-    }
-  });
-
-  return array;
-}
