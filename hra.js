@@ -5,7 +5,7 @@ let currentPlayer = 'circle';
 const buttonElements = document.querySelectorAll('button');
 
 //VYTVOŘIT POLE S ÚDAJI O AKTUÁLNÍM STAVU HRY
-function createArray() {
+const createArray = () => {
   const array = [];
   buttonElements.forEach((button) => {
     if (button.classList.contains('x')) {
@@ -18,26 +18,77 @@ function createArray() {
   });
 
   return array;
-}
+};
+
+let gameBoard = createArray();
+
+// FUNKCE PRO API / HRAJE POČÍTAČ
+
+const computerMove = async () => {
+  const board = createArray();
+  console.log('odesilam na api', board);
+
+  const response = await fetch(
+    'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+    {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify({ board, player: 'x' }),
+    },
+  );
+
+  const data = await response.json();
+  console.log('odpověd z api', data);
+
+  const { x, y } = data.position;
+  const index = x + y * 10;
+  const button = buttonElements[index];
+
+  button.classList.add('x');
+  button.innerHTML = `
+    <div class="hra__image-container x">
+      <img class="hra__showing" src="podklady/cross-black.svg" alt="černý kříž" />
+    </div>`;
+  button.disabled = true;
+
+  gameBoard[index] = 'x';
+  currentPlayer = 'circle';
+  document.querySelector(
+    '.hra__player',
+  ).innerHTML = `<img src="podklady/circle.svg" alt="bílý kruh"/>`;
+
+  whoWon();
+};
 
 //ZJISTIT KDO VYHRÁL
+
 const whoWon = () => {
-  const vitez = findWinner(createArray());
-  if (vitez === 'o' || vitez === 'x') {
+  const winner = findWinner(createArray());
+  if (winner === 'o' || winner === 'x') {
     setTimeout(() => {
-      alert(`Vyhrál hráč se symbolem ${vitez}.`);
+      alert(`Vyhrál hráč se symbolem ${winner}.`);
       location.reload();
     }, 100);
+  } else if (winner === 'tie') {
+    alert(`Hra skončila remízou.`);
   }
-  console.log(vitez);
+
+  console.log(winner);
 };
 
 buttonElements.forEach((button) => {
   button.addEventListener('click', (event) => {
-    event.target.disabled = true;
+    if (currentPlayer !== 'circle') {
+      return; //zabránit hrát když nemá
+    }
+    const clickedButton = event.currentTarget;
+    const index = Array.from(buttonElements).indexOf(button);
+
+    clickedButton.disabled = true;
+
     if (currentPlayer === 'circle') {
-      button.classList.add('o');
-      button.innerHTML = ` 
+      clickedButton.classList.add('o');
+      clickedButton.innerHTML = ` 
         <div class="hra__image-container">
         <img
           class="hra__showing"
@@ -45,26 +96,20 @@ buttonElements.forEach((button) => {
           alt="černý kruh"
         />
         </div>`;
-      console.log(createArray());
+
+      gameBoard[index] = 'o';
       currentPlayer = 'cross';
       const playerElement = document.querySelector('.hra__player');
       playerElement.innerHTML = `<img src="podklady/cross.svg" alt="bílý kříž" />`;
-    } else {
-      button.classList.add('x');
-      button.innerHTML = ` 
-        <div class="hra__image-container x">
-        <img
-          class="hra__showing"
-          src="podklady/cross-black.svg"
-          alt="černý kříž"
-        />
-        </div>`;
-      console.log(createArray());
-      currentPlayer = 'circle';
-      const playerElement = document.querySelector('.hra__player');
-      playerElement.innerHTML = `<img src="podklady/circle.svg" alt="bílý kruh"/>`;
     }
+
     whoWon();
+
+    if (currentPlayer === 'cross' && findWinner(createArray()) === null) {
+      setTimeout(() => {
+        computerMove();
+      }, 300);
+    }
   });
 });
 
